@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="罗安民的个人主页：音乐科技、音频工程、心理与认知、AI 音乐产品。"
+    />
+    <meta name="theme-color" content="#0c0d0f" />
+    <title>罗安民｜音乐科技与音频实验</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%23c8ff45%22/><path d=%22M27 72V28h11v34h25v10zm42 0V28h10v44z%22 fill=%22%230c0d0f%22/></svg>"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+    <div class="noise-layer" aria-hidden="true"></div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="返回首页">
+        <span class="brand__mark">LA</span>
+        <span class="brand__text">LUO ANMIN</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主要导航" data-nav>
+        <a href="#about" data-nav-link>关于</a>
+        <a href="#work" data-nav-link>项目</a>
+        <a href="#experience" data-nav-link>经历</a>
+        <a href="#contact" data-nav-link>联系</a>
+      </nav>
+
+      <a class="header-cta" href="#contact">
+        <span>Let's talk</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">MUSIC TECHNOLOGY / AUDIO / AI</p>
+          <h1 id="hero-title" class="hero__title reveal">
+            让声音成为<br />
+            <span>可以研究、设计</span><br />
+            与体验的系统
+          </h1>
+          <p class="hero__intro reveal">
+            我是罗安民，上海音乐学院音乐科技专业学生。
+            我在音乐、音频工程、心理与认知、AI 产品之间工作，
+            把听觉问题转化为实验、工具与真实体验。
+          </p>
+          <div class="hero__actions reveal">
+            <a class="button button--primary" href="#work">
+              查看代表项目
+              <span aria-hidden="true">↓</span>
+            </a>
+            <button class="button button--ghost" type="button" data-copy-email>
+              复制邮箱
+              <span aria-hidden="true">＋</span>
+            </button>
+          </div>
+          <dl class="hero__facts reveal" aria-label="基本信息">
+            <div>
+              <dt>BASE</dt>
+              <dd>上海</dd>
+            </div>
+            <div>
+              <dt>FOCUS</dt>
+              <dd>音乐科技 / AI 音乐</dd>
+            </div>
+            <div>
+              <dt>STATUS</dt>
+              <dd><span class="status-dot"></span>开放交流与合作</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual reveal" aria-label="罗安民肖像">
+          <div class="portrait-card">
+            <div class="portrait-card__grid" aria-hidden="true"></div>
+            <img
+              class="portrait-card__image--illustrated"
+              src="./assets/portrait-1989.jpg"
+              alt="罗安民在餐厅中的插画风肖像"
+              width="1280"
+              height="1632"
+            />
+            <div class="portrait-card__caption">
+              <span>罗安民</span>
+              <small>Music technologist</small>
+            </div>
+          </div>
+          <div class="floating-note floating-note--bottom" aria-hidden="true">
+            <span>SOUND / MIND</span>
+            <svg viewBox="0 0 120 24" role="img" aria-label="装饰音频波形">
+              <path d="M1 12h10l5-8 8 17 8-13 7 8 8-4 9-10 8 20 9-14 8 8 9-5 8 2h12" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+          <span>SCROLL TO EXPLORE</span>
+          <i></i>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>音乐科技</span><i>✦</i>
+          <span>音频工程</span><i>✦</i>
+          <span>心理与认知</span><i>✦</i>
+          <span>人工智能</span><i>✦</i>
+          <span>交互体验</span><i>✦</i>
+        </div>
+      </div>
+
+      <section class="education-early section-shell" aria-label="教育经历与荣誉">
+        <div class="recognition reveal">
+          <p>EDUCATION &amp; RECOGNITION</p>
+          <div class="recognition__grid">
+            <article>
+              <span>2023 — 2027</span>
+              <h3>上海音乐学院</h3>
+              <p>音乐科技 · 本科</p>
+            </article>
+            <article>
+              <span>2024 — 2026</span>
+              <h3>华东师范大学</h3>
+              <p>应用心理学 · 辅修</p>
+            </article>
+            <article>
+              <span>2025 — 2026</span>
+              <h3>上海音乐学院</h3>
+              <p>音乐科创 · 微专业</p>
+            </article>
+            <article>
+              <span>AWARDS</span>
+              <h3>创新与创意实践</h3>
+              <p>中国国际大学生创新大赛 · 上海赛区铜奖</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-shell" id="about" aria-labelledby="about-title">
+        <div class="section-heading reveal">
+          <span class="section-heading__number">01</span>
+          <p>ABOUT / PRACTICE</p>
+          <h2 id="about-title">跨学科，是我的工作方法。</h2>
+        </div>
+
+        <div class="about__lead reveal">
+          <p>
+            <span>从声音频谱与听觉感知出发，建立实验、整理证据；</span>
+            <span>再把结论转化为产品、工具与可以被验证的真实体验。</span>
+          </p>
+        </div>
+
+        <div class="practice-grid">
+          <article class="practice-card practice-card--lime reveal">
+            <h3>研究声音</h3>
+            <p>听觉主观评价、人因实验、音乐心理与认知、疗愈音乐机制。</p>
+            <ul class="tag-list" aria-label="研究能力">
+              <li>Experimental Design</li>
+              <li>Counterbalance</li>
+              <li>Literature Review</li>
+            </ul>
+          </article>
+
+          <article class="practice-card practice-card--coral reveal">
+            <h3>构建声音</h3>
+            <p>从 DSP 原型、交互音频到录音混音，让抽象概念可以被听见。</p>
+            <ul class="tag-list" aria-label="音频技能">
+              <li>Max/MSP</li>
+              <li>Faust / JUCE</li>
+              <li>Reaper / Cubase</li>
+            </ul>
+          </article>
+
+          <article class="practice-card practice-card--blue reveal">
+            <h3>连接智能</h3>
+            <p>AI 音乐数据规范、自动标注链路、产品定义与生成式音乐实践。</p>
+            <ul class="tag-list" aria-label="人工智能技能">
+              <li>AI Music</li>
+              <li>Data Pipeline</li>
+              <li>Product Thinking</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="work section-shell" id="work" aria-labelledby="work-title">
+        <div class="section-heading section-heading--row reveal">
+          <div>
+            <span class="section-heading__number">02</span>
+            <p>SELECTED WORK</p>
+            <h2 id="work-title">把想法推进到可验证。</h2>
+          </div>
+          <p class="section-heading__aside">
+            这里选取三个方向不同的项目，展示我如何处理声音、研究、
+            产品与交互之间的关系。
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-card--feature reveal">
+            <div class="project-card__media project-card__media--technical">
+              <img
+                src="./assets/vivo-max.png"
+                alt="非线性失真感知实验的 Max/MSP 参数界面"
+                loading="lazy"
+              />
+              <span class="project-card__stamp">AUDIO R&amp;D</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>01</span>
+                <span>音频算法 / 人因研究</span>
+                <span>企业合作</span>
+              </div>
+              <h3>人对非线性失真的<br />感知实验</h3>
+              <p>
+                使用 Max/MSP 与 Python 构建手机外放失真 Demo，
+                参与上下加权法实验流程、人因变量控制与声学校准。
+              </p>
+              <button
+                class="text-link"
+                type="button"
+                data-project-open="distortion"
+                aria-haspopup="dialog"
+              >
+                查看项目详情 <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media project-card__media--yinyuejia">
+              <img
+                src="./assets/huawei-yinyuejia-studio.jpg"
+                alt="华为“音悦家”工作室模式界面"
+                loading="lazy"
+              />
+              <span class="project-card__stamp">HUAWEI × SHCM</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>02</span>
+                <span>音乐产品 / 音色与 UX</span>
+                <span>校企合作</span>
+              </div>
+              <h3>华为“音悦家” · 乐器与声音产品研究</h3>
+              <p>
+                围绕中西乐器与演奏技法开展调研，协助拟真乐器 UX 建模，
+                并参与混音滤镜与多风格工程模板设计。
+              </p>
+              <a
+                class="project-card__official"
+                href="https://consumer.huawei.com/cn/mobileservices/yinyuejia/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                华为官方项目页 ↗
+              </a>
+              <button
+                class="text-link"
+                type="button"
+                data-project-open="yinyuejia"
+                aria-haspopup="dialog"
+              >
+                查看项目详情 <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media project-card__media--shengqi">
+              <img
+                src="./assets/shengqi-cover.png"
+                alt="“声栖”项目宣讲 PPT 封面"
+                loading="lazy"
+              />
+              <span class="project-card__stamp">EEG × SOUND</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>03</span>
+                <span>音乐心理 / 生成式音频</span>
+                <span>工具原型</span>
+              </div>
+              <h3>“声栖” · EEG 驱动的接受式人工智能音乐疗愈系统</h3>
+              <p>
+                将 EEG 状态、音乐疗愈理论与生成式 AI 串成自动化链路，
+                融合主音乐、TTS 引导词和自然环境声。
+              </p>
+              <button
+                class="text-link"
+                type="button"
+                data-project-open="shengqi"
+                aria-haspopup="dialog"
+              >
+                查看项目详情 <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div class="work-notes reveal">
+          <p>MORE EXPLORATIONS</p>
+          <ul>
+            <li><span>疗愈音乐的声学机制与功能分类</span><small>独立综述 / 证据框架</small></li>
+            <li><span>声音主观评价与智能座舱调音</span><small>听评 / 产品体验</small></li>
+            <li><span>MCI 音乐偏好与精准干预</span><small>医学合作 / 音乐库</small></li>
+            <li><span>音乐诱发情绪的 EEG 实验</span><small>实验设计 / 刺激材料</small></li>
+            <li><span>上海市录音师协会会员</span><small>专业会员 / 音频行业交流</small></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="experience section-shell" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading reveal">
+          <span class="section-heading__number">03</span>
+          <p>EXPERIENCE</p>
+          <h2 id="experience-title">学习，也在真实场景里验证。</h2>
+        </div>
+
+        <div class="experience-layout">
+          <div class="timeline" aria-label="实习与项目经历">
+            <article class="timeline-item reveal">
+              <time>2025.04 — 至今</time>
+              <div>
+                <h3>自由量级（上海）智能科技有限公司</h3>
+                <p>AI 音乐数据与产品</p>
+                <span>音乐数据标注规范 · 自动标注链路评价 · 产品定义与调研</span>
+              </div>
+            </article>
+            <article class="timeline-item reveal">
+              <time>2025.07 — 2025.08</time>
+              <div>
+                <h3>乐王（上海）文化发展股份有限公司</h3>
+                <p>听觉主观评价</p>
+                <span>Platane HD32 耳机实验设计 · Counterbalance · 声卡驱动调研</span>
+              </div>
+            </article>
+            <article class="timeline-item reveal">
+              <time>2024.01 — 2024.02</time>
+              <div>
+                <h3>上海音虫科技有限公司</h3>
+                <p>DAW 产品测试</p>
+                <span>SoundBug 3.0 音乐制作软件功能与用户测试</span>
+              </div>
+            </article>
+          </div>
+
+          <aside class="toolbox reveal">
+            <div class="toolbox__header">
+              <p>TOOLBOX</p>
+              <span>持续更新</span>
+            </div>
+            <div class="toolbox__group">
+              <h3>Audio</h3>
+              <p>Max/MSP · Faust · JUCE · Reaper · Cubase · Wwise</p>
+            </div>
+            <div class="toolbox__group">
+              <h3>Code</h3>
+              <p>Python · JavaScript · C/C++ · C# · Lua · Unity</p>
+            </div>
+            <div class="toolbox__group">
+              <h3>AI &amp; Product</h3>
+              <p>Suno · Claude Code · NotebookLM · 数据规范 · 产品研究</p>
+            </div>
+            <div class="toolbox__signal" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </aside>
+        </div>
+
+      </section>
+
+      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+        <div class="contact__signal" aria-hidden="true">
+          <svg viewBox="0 0 900 160" preserveAspectRatio="none">
+            <path d="M0 80h110l28-36 35 80 45-108 40 98 44-60 50 28 46-5 38-31 42 68 44-40 45 8 45-50 50 92 42-56 50 12 52-40 40 20h107" />
+          </svg>
+        </div>
+        <p class="eyebrow reveal">OPEN TO IDEAS / PROJECTS / CONVERSATIONS</p>
+        <h2 id="contact-title" class="reveal">
+          如果你也在探索<br />
+          <span>音乐、技术与心理的边界，</span><br />
+          我们可以聊聊。
+        </h2>
+        <div class="contact__actions reveal">
+          <a class="button button--primary button--large" href="mailto:13816023718@163.com">
+            13816023718@163.com
+            <span aria-hidden="true">↗</span>
+          </a>
+          <button class="button button--ghost" type="button" data-copy-email>
+            复制邮箱
+          </button>
+        </div>
+        <div class="contact__meta reveal">
+          <span>Shanghai, China</span>
+          <span>Available for internship &amp; collaboration</span>
+          <span>© <b data-year></b> Luo Anmin</span>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="project-dialog" data-project-dialog aria-labelledby="dialog-title">
+      <button class="project-dialog__close" type="button" data-dialog-close aria-label="关闭">
+        ×
+      </button>
+      <p class="project-dialog__eyebrow" data-dialog-eyebrow></p>
+      <h2 id="dialog-title" data-dialog-title></h2>
+      <p class="project-dialog__summary" data-dialog-summary></p>
+      <div class="project-dialog__grid">
+        <div>
+          <h3>我的工作</h3>
+          <ul data-dialog-role></ul>
+        </div>
+        <div>
+          <h3>方法与工具</h3>
+          <ul data-dialog-tools></ul>
+        </div>
+      </div>
+      <div class="project-dialog__outcome">
+        <span>OUTPUT</span>
+        <p data-dialog-outcome></p>
+      </div>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>邮箱已复制</div>
+  </body>
+</html>
