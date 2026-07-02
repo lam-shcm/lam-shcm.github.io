@@ -145,60 +145,6 @@ dialog?.addEventListener("click", (event) => {
   if (event.target === dialog) dialog.close();
 });
 
-const audioPlayer = document.querySelector("[data-audio-player]");
-const audio = audioPlayer?.querySelector("[data-audio]");
-const audioToggle = audioPlayer?.querySelector("[data-audio-toggle]");
-const audioIcon = audioPlayer?.querySelector("[data-play-icon]");
-const audioTime = audioPlayer?.querySelector("[data-audio-time]");
-
-function formatTime(value) {
-  if (!Number.isFinite(value)) return "00:00";
-  const minutes = Math.floor(value / 60);
-  const seconds = Math.floor(value % 60);
-  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-}
-
-function updateAudioUI() {
-  if (!audio || !audioTime) return;
-  audioTime.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration || 35)}`;
-}
-
-audioToggle?.addEventListener("click", async () => {
-  if (!audio) return;
-
-  if (audio.paused) {
-    try {
-      await audio.play();
-    } catch {
-      toast.textContent = "浏览器阻止了自动播放，请再次点击播放";
-      toast?.classList.add("is-visible");
-      window.clearTimeout(toastTimer);
-      toastTimer = window.setTimeout(() => {
-        toast?.classList.remove("is-visible");
-        toast.textContent = "邮箱已复制";
-      }, 2600);
-    }
-  } else {
-    audio.pause();
-  }
-});
-
-audio?.addEventListener("play", () => {
-  audioPlayer?.classList.add("is-playing");
-  if (audioIcon) audioIcon.textContent = "Ⅱ";
-  audioToggle?.setAttribute("aria-label", "暂停《荣耀的村庄》片段");
-});
-
-audio?.addEventListener("pause", () => {
-  audioPlayer?.classList.remove("is-playing");
-  if (audioIcon) audioIcon.textContent = "▶";
-  audioToggle?.setAttribute("aria-label", "播放《荣耀的村庄》片段");
-});
-
-audio?.addEventListener("timeupdate", updateAudioUI);
-audio?.addEventListener("loadedmetadata", updateAudioUI);
-audio?.addEventListener("ended", updateAudioUI);
-
 const copyButtons = [...document.querySelectorAll("[data-copy-email]")];
 const toast = document.querySelector("[data-toast]");
 let toastTimer;

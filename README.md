@@ -26,7 +26,7 @@
 - 使用语义化 HTML 建立完整的单页信息结构
 - 使用 CSS Grid、Flexbox 与媒体查询适配桌面端和移动端
 - 编写导航状态、滚动显现、项目详情弹窗与邮箱复制交互
-- 实现项目音频试听、进度控制与播放状态反馈
+- 使用数据对象集中维护三个项目的详情内容并动态填充弹窗
 - 使用 Canvas 绘制随页面变化的动态声音曲线背景
 - 支持键盘操作、减少动态效果偏好和基础无障碍语义
 - 使用 Vite 完成生产构建，通过 GitHub Actions 自动发布
@@ -39,7 +39,6 @@
 - CSS3
 - JavaScript
 - Canvas API
-- Web Audio / HTMLAudioElement
 - Vite
 - GitHub Actions 与 GitHub Pages
 
@@ -65,7 +64,7 @@ npm run preview
 ├── src/
 │   ├── styles.css             # 视觉系统与响应式布局
 │   └── app.js                 # 页面交互与音频逻辑
-├── public/assets/             # 图片、项目封面与音频素材
+├── public/assets/             # 头像、项目封面与展示素材
 ├── 程序编写说明.md             # 功能与实现说明
 └── .github/workflows/         # GitHub Pages 自动部署
 ```
