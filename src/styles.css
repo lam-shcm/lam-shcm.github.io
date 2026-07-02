@@ -424,18 +424,6 @@ ol {
   background: linear-gradient(to top, rgba(12, 13, 15, 0.96), transparent);
 }
 
-.portrait-card__grid {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  opacity: 0.24;
-  background-image:
-    linear-gradient(rgba(12, 13, 15, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(12, 13, 15, 0.3) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mix-blend-mode: multiply;
-}
-
 .portrait-card img {
   position: absolute;
   inset: 0;

@@ -1,6 +1,47 @@
-# 罗安民个人主页
+# 罗安民｜个人作品集
 
-一个使用原生 HTML、CSS、JavaScript 构建的响应式个人作品集，内容来自个人简历与已完成项目材料。
+音乐科技、音频工程、心理与认知、AI 音乐产品方向的响应式个人网站。
+
+**在线访问：[https://lam-shcm.github.io/](https://lam-shcm.github.io/)**
+
+## 项目说明
+
+本项目为本科课程“网页编程应用程序”方向的期末作品。网站内容依据个人简历、
+研究经历与已完成项目重新整理，视觉系统、信息架构、交互逻辑和响应式布局均围绕
+个人经历设计。
+
+网站希望用一条清晰的叙事链呈现个人能力：从声音研究与实验设计出发，进一步进入
+音频技术、产品实践及音乐心理应用。
+
+## 主要内容
+
+- 教育经历：上海音乐学院音乐科技本科、华东师范大学应用心理学辅修
+- 代表项目：非线性失真感知实验、华为“音悦家”、“声栖”
+- 实践经历：AI 音乐数据与产品、听觉主观评价、DAW 产品测试
+- 专业身份与荣誉：上海市录音师协会会员、创新与创意实践经历
+- 工具能力：音频开发、编程、AI 音乐与产品研究
+
+## 功能与个人工作
+
+- 使用语义化 HTML 建立完整的单页信息结构
+- 使用 CSS Grid、Flexbox 与媒体查询适配桌面端和移动端
+- 编写导航状态、滚动显现、项目详情弹窗与邮箱复制交互
+- 实现项目音频试听、进度控制与播放状态反馈
+- 使用 Canvas 绘制随页面变化的动态声音曲线背景
+- 支持键盘操作、减少动态效果偏好和基础无障碍语义
+- 使用 Vite 完成生产构建，通过 GitHub Actions 自动发布
+
+更完整的设计与实现过程见：[程序编写说明](./程序编写说明.md)。
+
+## 技术栈
+
+- HTML5
+- CSS3
+- JavaScript
+- Canvas API
+- Web Audio / HTMLAudioElement
+- Vite
+- GitHub Actions 与 GitHub Pages
 
 ## 本地运行
 
@@ -9,57 +50,28 @@ npm install
 npm run dev
 ```
 
-浏览器打开终端显示的本地地址即可。
-
-## 构建发布版本
+构建并检查发布版本：
 
 ```bash
 npm run build
 npm run preview
 ```
 
-构建产物位于 `dist/`，可部署到 GitHub Pages、Cloudflare Pages、Vercel 或任意静态网站服务器。
-
-## 发布到 GitHub Pages（推荐）
-
-项目已包含自动部署文件 `.github/workflows/deploy.yml`。本项目使用 GitHub
-用户主页仓库，仓库名为 `lam-shcm.github.io`。
-
-1. 在 GitHub 新建一个公开仓库，不勾选自动创建 README。
-2. 在本项目目录执行：
-
-```bash
-git add .
-git commit -m "Publish portfolio"
-git remote add origin https://github.com/lam-shcm/lam-shcm.github.io.git
-git push -u origin main
-```
-
-3. 打开仓库的 `Settings → Pages`。
-4. 在 `Build and deployment → Source` 中选择 `GitHub Actions`。
-5. 等待 `Actions` 中的部署任务完成，公开地址通常为：
+## 项目结构
 
 ```text
-https://lam-shcm.github.io/
+.
+├── index.html                 # 页面结构与内容
+├── src/
+│   ├── styles.css             # 视觉系统与响应式布局
+│   └── app.js                 # 页面交互与音频逻辑
+├── public/assets/             # 图片、项目封面与音频素材
+├── 程序编写说明.md             # 功能与实现说明
+└── .github/workflows/         # GitHub Pages 自动部署
 ```
 
-以后每次向 `main` 分支推送代码，网页都会自动重新构建和发布。
+## 内容说明
 
-## CodePen 备选方案
-
-CodePen 适合展示独立的 HTML、CSS、JavaScript 小案例。当前主页包含多张图片、
-项目封面和完整构建流程；免费 CodePen 不提供文件资源托管，因此需要额外寻找图片
-托管服务并修改全部资源链接。提交本作业时建议将 GitHub Pages 作为主链接，
-CodePen 可用于额外展示某个交互模块。
-
-## 主要内容
-
-- 个人定位：音乐科技、音频工程、心理与认知、AI 音乐产品
-- 代表项目：非线性失真感知实验、华为“音悦家”、“声栖”
-- 华为“音悦家”项目图片与产品信息来源：[华为“音悦家”官网](https://consumer.huawei.com/cn/mobileservices/yinyuejia/)
-- 实习与教育经历
-- 技术工具箱与研究能力
-
-## 隐私处理
-
-公开页面保留姓名与联系邮箱，未写入手机号、出生日期、家庭地址等信息。涉及保密合作的内容只保留概括性描述。
+华为“音悦家”项目的公开产品信息与展示图片参考
+[华为“音悦家”官网](https://consumer.huawei.com/cn/mobileservices/yinyuejia/)。
+涉及合作项目的内容仅保留适合公开展示的概括性信息。
