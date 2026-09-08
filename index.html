@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="罗安民的个人主页：音乐科技、音频工程、心理与认知、AI 音乐产品。"
+      content="罗安民的个人主页：音乐科技与艺术、音频工程、心理与认知、AI 音乐产品。"
     />
     <meta name="theme-color" content="#0c0d0f" />
-    <title>罗安民｜音乐科技与音频实验</title>
+    <title>罗安民｜音乐科技、音频与 AI 音乐实践</title>
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%23c8ff45%22/><path d=%22M27 72V28h11v34h25v10zm42 0V28h10v44z%22 fill=%22%230c0d0f%22/></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%23c8ff45%22/><text x=%2250%22 y=%2254%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-family=%22Arial,sans-serif%22 font-size=%2230%22 font-weight=%22800%22 fill=%22%230c0d0f%22>LAM</text></svg>"
     />
-    <link rel="stylesheet" href="/src/styles.css" />
-    <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="./src/styles.css?v=20260908-012217" />
+    <link rel="stylesheet" href="./src/apple-font-only.css?v=20260908-012217" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("img[data-asset]").forEach((image) => {
+          const assetRoot = window.location.protocol === "file:" ? "./public/assets/" : "./assets/";
+          image.src = `${assetRoot}${image.dataset.asset}`;
+        });
+      });
+    </script>
+    <script type="module" src="./src/app.js?v=20260908-012217"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -23,21 +32,9 @@
 
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="返回首页">
-        <span class="brand__mark">LA</span>
+        <span class="brand__mark">LAM</span>
         <span class="brand__text">LUO ANMIN</span>
       </a>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="打开导航"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        data-menu-toggle
-      >
-        <span></span>
-        <span></span>
-      </button>
 
       <nav class="site-nav" id="site-nav" aria-label="主要导航" data-nav>
         <a href="#about" data-nav-link>关于</a>
@@ -46,10 +43,26 @@
         <a href="#contact" data-nav-link>联系</a>
       </nav>
 
-      <a class="header-cta" href="#contact">
-        <span>Let's talk</span>
-        <span aria-hidden="true">↗</span>
-      </a>
+      <div class="header-actions">
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch to English">
+          <span data-language-label>EN</span>
+        </button>
+        <a class="header-cta" href="#contact">
+          <span>Let's talk</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="打开导航"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main id="main-content">
@@ -62,7 +75,7 @@
             与体验的系统
           </h1>
           <p class="hero__intro reveal">
-            我是罗安民，上海音乐学院音乐科技专业学生。
+            我是罗安民，上海音乐学院音乐科技与艺术方向学生。
             我在音乐、音频工程、心理与认知、AI 产品之间工作，
             把听觉问题转化为实验、工具与真实体验。
           </p>
@@ -96,10 +109,10 @@
           <div class="portrait-card">
             <img
               class="portrait-card__image--illustrated"
-              src="./assets/portrait-illustration.jpg"
-              alt="罗安民在餐厅中的插画风肖像"
-              width="1280"
-              height="1632"
+              data-asset="portrait-illustration.png"
+              alt="罗安民在录音棚中的插画风肖像"
+              width="1111"
+              height="1416"
             />
             <div class="portrait-card__caption">
               <span>罗安民</span>
@@ -130,14 +143,14 @@
         </div>
       </div>
 
-      <section class="education-early section-shell" aria-label="教育经历与荣誉">
+      <section class="education-early section-shell" aria-label="教育经历">
         <div class="recognition reveal">
-          <p>EDUCATION &amp; RECOGNITION</p>
+          <p>EDUCATION</p>
           <div class="recognition__grid">
             <article>
               <span>2023 — 2027</span>
               <h3>上海音乐学院</h3>
-              <p>音乐科技 · 本科</p>
+              <p>音乐科技与艺术 · 本科</p>
             </article>
             <article>
               <span>2024 — 2026</span>
@@ -149,10 +162,40 @@
               <h3>上海音乐学院</h3>
               <p>音乐科创 · 微专业</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="awards-early section-shell" id="awards" aria-label="获奖经历">
+        <div class="awards-block reveal">
+          <div class="awards-block__heading">
+            <p>AWARDS &amp; RECOGNITION</p>
+            <span>四项代表性荣誉</span>
+          </div>
+          <div class="awards-list">
             <article>
-              <span>AWARDS</span>
-              <h3>创新与创意实践</h3>
-              <p>中国国际大学生创新大赛 · 上海赛区铜奖</p>
+              <span>01 | 全国一等奖、省级一等奖</span>
+              <h3>中国好创意暨全国数字艺术设计大赛</h3>
+              <p>数智声音景观类 · 全国总决赛</p>
+              <p><button class="text-link" type="button" data-award-open="shengqi-awards">作品详情 ↗</button></p>
+            </article>
+            <article>
+              <span>02 | 全国一等奖</span>
+              <h3>未来设计师·全国高校数字艺术设计大赛</h3>
+              <p>AIGC-音乐类 · 全国总决赛</p>
+              <p><button class="text-link" type="button" data-award-open="ncda-national">作品详情 ↗</button></p>
+            </article>
+            <article>
+              <span>03 | 省级银奖</span>
+              <h3>“挑战杯”上海市大学生创业计划竞赛</h3>
+              <p>上海赛区</p>
+              <p><button class="text-link" type="button" data-award-open="challenge-cup">项目详情 ↗</button></p>
+            </article>
+            <article>
+              <span>04 | 省级铜奖</span>
+              <h3>中国国际大学生创新大赛</h3>
+              <p>上海赛区</p>
+              <p><button class="text-link" type="button" data-award-open="innovation-competition">项目详情 ↗</button></p>
             </article>
           </div>
         </div>
@@ -223,7 +266,7 @@
           <article class="project-card project-card--feature reveal">
             <div class="project-card__media project-card__media--technical">
               <img
-                src="./assets/vivo-max.png"
+                data-asset="vivo-max.png"
                 alt="非线性失真感知实验的 Max/MSP 参数界面"
                 loading="lazy"
               />
@@ -254,7 +297,7 @@
           <article class="project-card reveal">
             <div class="project-card__media project-card__media--yinyuejia">
               <img
-                src="./assets/huawei-yinyuejia-studio.jpg"
+                data-asset="huawei-yinyuejia-studio.jpg"
                 alt="华为“音悦家”工作室模式界面"
                 loading="lazy"
               />
@@ -266,10 +309,10 @@
                 <span>音乐产品 / 音色与 UX</span>
                 <span>校企合作</span>
               </div>
-              <h3>华为“音悦家” · 乐器与声音产品研究</h3>
+              <h3>华为“音悦家” · 音乐产品协作</h3>
               <p>
-                围绕中西乐器与演奏技法开展调研，协助拟真乐器 UX 建模，
-                并参与混音滤镜与多风格工程模板设计。
+                作为校企合作项目产品一组成员，参与音乐产品研究、
+                测试与跨专业协作。
               </p>
               <a
                 class="project-card__official"
@@ -293,7 +336,7 @@
           <article class="project-card reveal">
             <div class="project-card__media project-card__media--shengqi">
               <img
-                src="./assets/shengqi-cover.png"
+                data-asset="shengqi-cover.png"
                 alt="“声栖”项目宣讲 PPT 封面"
                 loading="lazy"
               />
@@ -305,10 +348,10 @@
                 <span>音乐心理 / 生成式音频</span>
                 <span>工具原型</span>
               </div>
-              <h3>“声栖” · EEG 驱动的接受式人工智能音乐疗愈系统</h3>
+              <h3>“声栖” · 生理信号驱动的个性化人工智能音乐疗愈系统</h3>
               <p>
-                将 EEG 状态、音乐疗愈理论与生成式 AI 串成自动化链路，
-                融合主音乐、TTS 引导词和自然环境声。
+                将生理信号转译为音乐参数，连接人工智能音乐生成、
+                引导词、自然环境声、自动混音与质量控制。
               </p>
               <button
                 class="text-link"
@@ -326,7 +369,8 @@
           <p>MORE EXPLORATIONS</p>
           <ul>
             <li><span>疗愈音乐的声学机制与功能分类</span><small>独立综述 / 证据框架</small></li>
-            <li><span>声音主观评价与智能座舱调音</span><small>听评 / 产品体验</small></li>
+            <li><span>某中置 V8 超跑自然声浪前期定义</span><small>声音目标 / 跨团队研究</small></li>
+            <li><span>AutoLab「金耳朵」声音主观评价</span><small>智能座舱 / 音箱 / TWS</small></li>
             <li><span>MCI 音乐偏好与精准干预</span><small>医学合作 / 音乐库</small></li>
             <li><span>音乐诱发情绪的 EEG 实验</span><small>实验设计 / 刺激材料</small></li>
             <li><span>上海市录音师协会会员</span><small>专业会员 / 音频行业交流</small></li>
@@ -344,15 +388,25 @@
         <div class="experience-layout">
           <div class="timeline" aria-label="实习与项目经历">
             <article class="timeline-item reveal">
-              <time>2025.04 — 至今</time>
+              <div class="timeline-meta">
+                <time>2025.04 — 2026.07</time>
+                <span class="timeline-logo-frame timeline-logo-frame--initiai">
+                  <img data-asset="logo-initiai.png" alt="initi:AI 自由量级标志" />
+                </span>
+              </div>
               <div>
                 <h3>自由量级（上海）智能科技有限公司</h3>
-                <p>AI 音乐数据与产品</p>
-                <span>音乐数据标注规范 · 自动标注链路评价 · 产品定义与调研</span>
+                <p>评测实习生 / 产品实习生</p>
+                <span>AI 音乐模型评测 · 标注规范与数据验收 · 产品研究</span>
               </div>
             </article>
             <article class="timeline-item reveal">
-              <time>2025.07 — 2025.08</time>
+              <div class="timeline-meta">
+                <time>2025.07 — 2025.08</time>
+                <span class="timeline-logo-frame">
+                  <img data-asset="logo-music-king.png" alt="Music King 乐王标志" />
+                </span>
+              </div>
               <div>
                 <h3>乐王（上海）文化发展股份有限公司</h3>
                 <p>听觉主观评价</p>
@@ -360,11 +414,16 @@
               </div>
             </article>
             <article class="timeline-item reveal">
-              <time>2024.01 — 2024.02</time>
+              <div class="timeline-meta">
+                <time>2024.01 — 2024.02</time>
+                <span class="timeline-logo-frame">
+                  <img data-asset="logo-soundbug.png" alt="SoundBug 音虫标志" />
+                </span>
+              </div>
               <div>
                 <h3>上海音虫科技有限公司</h3>
-                <p>DAW 产品测试</p>
-                <span>SoundBug 3.0 音乐制作软件功能与用户测试</span>
+                <p>测试实习生</p>
+                <span>SoundBug 3.0 正常与异常场景测试 · Bug 报告 · UX 建议</span>
               </div>
             </article>
           </div>
@@ -384,7 +443,7 @@
             </div>
             <div class="toolbox__group">
               <h3>AI &amp; Product</h3>
-              <p>Suno · Claude Code · NotebookLM · 数据规范 · 产品研究</p>
+              <p>生成式音乐 · 数据规范 · 质量评测 · 产品研究</p>
             </div>
             <div class="toolbox__signal" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span>
@@ -405,9 +464,9 @@
         </div>
         <p class="eyebrow reveal">OPEN TO IDEAS / PROJECTS / CONVERSATIONS</p>
         <h2 id="contact-title" class="reveal">
-          如果你也在探索<br />
-          <span>音乐、技术与心理的边界，</span><br />
-          我们可以聊聊。
+          <span class="contact-line contact-line--solid">如果你也在探索</span>
+          <span class="contact-line contact-line--outline">音乐、技术与心理的边界，</span>
+          <span class="contact-line contact-line--solid">我们可以聊聊。</span>
         </h2>
         <div class="contact__actions reveal">
           <a class="button button--primary button--large" href="mailto:13816023718@163.com">
@@ -433,18 +492,24 @@
       <p class="project-dialog__eyebrow" data-dialog-eyebrow></p>
       <h2 id="dialog-title" data-dialog-title></h2>
       <p class="project-dialog__summary" data-dialog-summary></p>
+      <nav class="project-dialog__grid" data-dialog-project-menu aria-label="相关项目" hidden>
+        <div>
+          <h3>相关项目</h3>
+          <ul data-dialog-project-menu-list></ul>
+        </div>
+      </nav>
       <div class="project-dialog__grid">
         <div>
-          <h3>我的工作</h3>
+          <h3 data-dialog-role-label>我的工作</h3>
           <ul data-dialog-role></ul>
         </div>
         <div>
-          <h3>方法与工具</h3>
+          <h3 data-dialog-tools-label>方法与工具</h3>
           <ul data-dialog-tools></ul>
         </div>
       </div>
       <div class="project-dialog__outcome">
-        <span>OUTPUT</span>
+        <span data-dialog-outcome-label>OUTPUT</span>
         <p data-dialog-outcome></p>
       </div>
     </dialog>
