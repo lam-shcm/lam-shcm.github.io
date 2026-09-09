@@ -110,6 +110,86 @@ body * {
   line-height: 1.65;
 }
 
+.credentials-gallery {
+  margin-top: 44px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.credentials-gallery__heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.credentials-gallery__heading p {
+  color: #777a80;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+}
+
+.credentials-gallery__heading span {
+  color: var(--paper-muted);
+  font-size: 14px;
+}
+
+.credentials-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.credentials-gallery figure {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.credential-card__media {
+  display: grid;
+  height: clamp(260px, 28vw, 390px);
+  place-items: center;
+  padding: 14px;
+  overflow: hidden;
+  background: #e7e5df;
+}
+
+.credential-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.credentials-gallery figcaption {
+  display: flex;
+  min-height: 78px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 18px 18px;
+}
+
+.credentials-gallery figcaption span {
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.credentials-gallery figcaption small {
+  min-width: 0;
+  max-width: 42%;
+  flex: 0 1 42%;
+  color: var(--paper-muted);
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
 /* 日期与品牌标志共用左栏，把原先的空白变成可扫读的公司索引。 */
 .timeline-item {
   grid-template-columns: 230px minmax(0, 1fr);
@@ -240,6 +320,14 @@ body.lang-en .contact h2 .contact-line--outline {
   .awards-list article:nth-child(4) {
     border-top: 1px solid var(--line);
   }
+
+  .credentials-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .credential-card__media {
+    height: clamp(280px, 52vw, 430px);
+  }
 }
 
 @media (max-width: 560px) {
@@ -252,6 +340,20 @@ body.lang-en .contact h2 .contact-line--outline {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .credentials-gallery__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .credentials-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-card__media {
+    height: min(112vw, 520px);
   }
 
   .awards-list article + article,
