@@ -578,3 +578,39 @@ body.lang-en .contact h2 .contact-line--outline {
     text-align: left;
   }
 }
+
+/* MORE EXPLORATIONS uses the full reading width: image and list share one row. */
+.work-notes {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.work-notes__content {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(480px, 1.2fr);
+  align-items: start;
+  gap: clamp(28px, 4vw, 60px);
+}
+
+.work-notes__media {
+  margin-bottom: 0;
+}
+
+.work-notes__media-frame {
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 980px) {
+  .work-notes__content {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .work-notes__media {
+    width: min(100%, 720px);
+  }
+
+  .work-notes__media-frame {
+    aspect-ratio: 16 / 8.84;
+  }
+}
