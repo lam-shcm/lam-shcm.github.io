@@ -372,7 +372,7 @@ const staticEnglish = {
   "将生理信号转译为音乐参数，连接人工智能音乐生成、 引导词、自然环境声、自动混音与质量控制。": "Maps physiological signals to music parameters, connecting AI music generation, spoken guidance, nature sounds, automated mixing, and quality control.",
   "声音技术与创作现场": "Sound Technology in Practice",
   "展会 / 技术交流 / 赛事 / 演出": "Exhibitions / Technical Exchange / Competitions / Performances",
-  "疗愈音乐的声学机制与功能分类": "Acoustic Mechanisms and Functional Taxonomy of Therapeutic Music",
+  "《疗愈音乐的声学机制与功能分类》": "Acoustic Mechanisms and Functional Taxonomy of Therapeutic Music",
   "独立综述 / 证据框架": "Independent Review / Evidence Framework",
   "某中置 V8 超跑自然声浪前期定义": "Early Definition of a Mid-Engine V8 Supercar Sound Signature",
   "声音目标 / 跨团队研究": "Sound Target / Cross-Team Research",
