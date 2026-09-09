@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%23c8ff45%22/><text x=%2250%22 y=%2254%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-family=%22Arial,sans-serif%22 font-size=%2230%22 font-weight=%22800%22 fill=%22%230c0d0f%22>LAM</text></svg>"
     />
-    <link rel="stylesheet" href="./src/styles.css?v=20260909-102737" />
-    <link rel="stylesheet" href="./src/apple-font-only.css?v=20260909-102737" />
+    <link rel="stylesheet" href="./src/styles.css?v=20260909-110900" />
+    <link rel="stylesheet" href="./src/apple-font-only.css?v=20260909-110900" />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("img[data-asset]").forEach((image) => {
@@ -23,7 +23,7 @@
         });
       });
     </script>
-    <script type="module" src="./src/app.js?v=20260909-102737"></script>
+    <script type="module" src="./src/app.js?v=20260909-110900"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -208,36 +208,42 @@
               <figure data-credential="digital-soundscape">
                 <div class="credential-card__media">
                   <img data-asset="certificates/certificate-digital-soundscape.webp" alt="中国好创意数智声景专项赛全国一等奖证书" loading="lazy" />
+                  <button class="credential-card__view" type="button" data-credential-open aria-haspopup="dialog">查看大图</button>
                 </div>
                 <figcaption><span>数智声景专项赛</span><small>全国一等奖</small></figcaption>
               </figure>
               <figure data-credential="ncda-national-aigc">
                 <div class="credential-card__media">
                   <img data-asset="certificates/certificate-ncda-national-aigc.webp" alt="未来设计师AIGC音乐类全国一等奖证书" loading="lazy" />
+                  <button class="credential-card__view" type="button" data-credential-open aria-haspopup="dialog">查看大图</button>
                 </div>
                 <figcaption><span>未来设计师 · AIGC 音乐类</span><small>全国一等奖</small></figcaption>
               </figure>
               <figure data-credential="ncda-provincial-aigc">
                 <div class="credential-card__media">
                   <img data-asset="certificates/certificate-ncda-provincial-aigc.webp" alt="未来设计师AIGC音乐类上海赛区一等奖证书" loading="lazy" />
+                  <button class="credential-card__view" type="button" data-credential-open aria-haspopup="dialog">查看大图</button>
                 </div>
                 <figcaption><span>未来设计师 · AIGC 音乐类</span><small>上海赛区一等奖</small></figcaption>
               </figure>
               <figure data-credential="ncda-provincial-healing">
                 <div class="credential-card__media">
                   <img data-asset="certificates/certificate-ncda-provincial-healing.webp" alt="未来设计师音乐疗愈方向上海赛区一等奖证书" loading="lazy" />
+                  <button class="credential-card__view" type="button" data-credential-open aria-haspopup="dialog">查看大图</button>
                 </div>
                 <figcaption><span>未来设计师 · 音乐疗愈方向</span><small>上海赛区一等奖</small></figcaption>
               </figure>
               <figure data-credential="recording-association">
                 <div class="credential-card__media">
                   <img data-asset="certificates/credential-recording-association-wave.webp" alt="上海市录音师协会会员证书" loading="lazy" />
+                  <button class="credential-card__view" type="button" data-credential-open aria-haspopup="dialog">查看大图</button>
                 </div>
                 <figcaption><span>上海市录音师协会</span><small>会员资质</small></figcaption>
               </figure>
               <figure data-credential="syb-training">
                 <div class="credential-card__media">
-                  <img data-asset="certificates/credential-syb-training-public.webp" alt="马兰花创业培训SYB结业证书" loading="lazy" />
+                  <img data-asset="certificates/credential-syb-training-scan.webp" alt="马兰花创业培训SYB结业证书" loading="lazy" />
+                  <button class="credential-card__view" type="button" data-credential-open aria-haspopup="dialog">查看大图</button>
                 </div>
                 <figcaption><span>马兰花创业培训 · SYB</span><small>结业证书</small></figcaption>
               </figure>
@@ -530,6 +536,15 @@
         </div>
       </section>
     </main>
+
+    <dialog class="credential-lightbox" data-credential-dialog aria-labelledby="credential-dialog-title">
+      <button class="credential-lightbox__close" type="button" data-credential-close aria-label="关闭大图">×</button>
+      <h2 class="visually-hidden" id="credential-dialog-title" data-credential-dialog-title>证书完整大图</h2>
+      <div class="credential-lightbox__stage">
+        <img data-credential-dialog-image alt="" />
+      </div>
+      <p data-credential-dialog-caption></p>
+    </dialog>
 
     <dialog class="project-dialog" data-project-dialog aria-labelledby="dialog-title">
       <button class="project-dialog__close" type="button" data-dialog-close aria-label="关闭">

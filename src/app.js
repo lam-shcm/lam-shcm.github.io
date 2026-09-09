@@ -411,6 +411,8 @@ const staticEnglish = {
   "音乐、技术与心理的边界，": "the edges of music, technology, and psychology,",
   "我们可以聊聊。": "let's talk.",
   "关闭": "Close",
+  "查看大图": "View full image",
+  "证书完整大图": "Full certificate image",
   "相关项目": "Related projects",
   "我的工作": "My contribution",
   "方法与工具": "Methods & tools",
@@ -448,6 +450,7 @@ const translatedAttributes = [
   [".timeline-item:nth-child(3) img", "alt", "SoundBug 音虫标志", "SoundBug logo"],
   ["[data-dialog-project-menu]", "aria-label", "相关项目", "Related projects"],
   ["[data-dialog-close]", "aria-label", "关闭", "Close"],
+  ["[data-credential-close]", "aria-label", "关闭大图", "Close full image"],
 ];
 
 const originalTextByNode = new WeakMap();
@@ -716,6 +719,36 @@ dialog?.addEventListener("close", () => {
   lastDialogTrigger = null;
   activeProjectKey = null;
   activeMenuProjectKeys = [];
+});
+
+const credentialDialog = document.querySelector("[data-credential-dialog]");
+const credentialDialogImage = credentialDialog?.querySelector("[data-credential-dialog-image]");
+const credentialDialogCaption = credentialDialog?.querySelector("[data-credential-dialog-caption]");
+let lastCredentialTrigger = null;
+
+document.querySelectorAll("[data-credential-open]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const figure = button.closest("figure");
+    const sourceImage = figure?.querySelector("img");
+    const caption = figure?.querySelector("figcaption span")?.textContent?.trim();
+    if (!credentialDialog || !credentialDialogImage || !sourceImage) return;
+    lastCredentialTrigger = button;
+    credentialDialogImage.src = sourceImage.currentSrc || sourceImage.src;
+    credentialDialogImage.alt = sourceImage.alt;
+    if (credentialDialogCaption) credentialDialogCaption.textContent = caption || sourceImage.alt;
+    credentialDialog.showModal();
+    window.requestAnimationFrame(() => credentialDialog.querySelector("[data-credential-close]")?.focus());
+  });
+});
+
+credentialDialog?.querySelector("[data-credential-close]")?.addEventListener("click", () => credentialDialog.close());
+credentialDialog?.addEventListener("click", (event) => {
+  if (event.target === credentialDialog) credentialDialog.close();
+});
+credentialDialog?.addEventListener("close", () => {
+  credentialDialogImage?.removeAttribute("src");
+  lastCredentialTrigger?.focus();
+  lastCredentialTrigger = null;
 });
 
 const copyButtons = [...document.querySelectorAll("[data-copy-email]")];
